@@ -3,7 +3,12 @@ guid: 353aa13c4cf685d4da0564413baffc19
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Projectile
+    second: {fileID: 2100000, guid: edd6bc9b8acd48b78d63b6e3ce6f1c77, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

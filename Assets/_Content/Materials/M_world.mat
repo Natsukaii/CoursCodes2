@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_world
-  m_Shader: {fileID: 4800000, guid: 0b6b65e03c0cbc6458620f24738fd6c6, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2e86e5b44f6b9284e8a60217cdc2b214, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -22,14 +22,39 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _AOtex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MettalicTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SmoothnessTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Metallic: 0
-    - _Smoothness: 0.3
+    - _EmissionOn: 0
+    - _MetallicStrength: 0.0
+    - _NormalStrength: 1
+    - _SmoothnessStrength: 0.2
     m_Colors:
-    - _BaseColor: {r: 0.10499997, g: 0.16999996, b: 0.21999997, a: 1}
-    - _DarkColor: {r: 0.035, g: 0.054999977, b: 0.06999998, a: 1}
-    - _LineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.0900, g: 0.1000, b: 0.1100, a: 1}
+    - _EmissionColor: {r: 0.0000, g: 0.0000, b: 0.0000, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
