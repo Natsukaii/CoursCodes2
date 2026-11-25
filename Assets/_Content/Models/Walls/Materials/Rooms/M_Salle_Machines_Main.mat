@@ -50,11 +50,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _EmissionOn: 0
-    - _MetallicStrength: 0.7
+    - _MetallicStrength: 0.85
     - _NormalStrength: 1
-    - _SmoothnessStrength: 0.4
+    - _SmoothnessStrength: 0.72
     m_Colors:
-    - _BaseColor: {r: 0.5600, g: 0.5300, b: 0.4800, a: 1}
+    - _BaseColor: {r: 0.1050, g: 0.0850, b: 0.0700, a: 1}
     - _EmissionColor: {r: 0.0000, g: 0.0000, b: 0.0000, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
