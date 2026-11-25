@@ -74,6 +74,8 @@ GameObject:
   - component: {fileID: 4700255994880078248}
   - component: {fileID: 7678313450534884141}
   - component: {fileID: 8214457013337721001}
+  - component: {fileID: 8214457013337721002}
+  - component: {fileID: 8214457013337721003}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -186,6 +188,53 @@ MonoBehaviour:
     HeartbeatAmount: 0.15
     DeathIntensity: 2.2
     Smoothing: 0.05
+--- !u!114 &8214457013337721002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701756709460610233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946d1626b4404687bb3cd4a6fbfa0b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arena.FX.NeonTrail
+  _settings:
+    Color: {r: 0, g: 2.2, b: 2.8, a: 1}
+    Width: 0.4
+    Lifetime: 0.7
+    ParticlesPerMeter: 8
+    Offset: {x: 0, y: 0.15, z: 0}
+    Sparks: 1
+    AddLight: 1
+    LightColor: {r: 0.2, g: 0.85, b: 1, a: 1}
+    LightIntensity: 2.5
+    LightRange: 5
+  _references:
+    ParticleShader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
+    DotTexture: {fileID: 2800000, guid: df9c1c4f22d247eea5dd89940f8397c8, type: 3}
+    RibbonTexture: {fileID: 2800000, guid: e3bb10c3460d4800a6a7611f739b1dce, type: 3}
+--- !u!114 &8214457013337721003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701756709460610233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59d4936e77e4efc8e6b7d6e6b78b7a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arena.UI.NeonHUD
+  _settings:
+    Primary: {r: 0, g: 0.9, b: 1, a: 1}
+    Danger: {r: 1, g: 0.1, b: 0.6, a: 1}
+    Ammo: {r: 1, g: 0.82, b: 0.1, a: 1}
+    Panel: {r: 0.02, g: 0.02, b: 0.06, a: 0.65}
+    LowHealth: 0.4
+    Objective: Atteindre le coeur du reacteur
+    ScanlinesOpacity: 0.08
 --- !u!1001 &4057595757166956945
 PrefabInstance:
   m_ObjectHideFlags: 0

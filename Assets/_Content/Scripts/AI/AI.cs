@@ -20,8 +20,12 @@ namespace Arena.AI
         [SerializeField] protected AIBasicSetting basicSetting = new AIBasicSetting();
         
         
+        public Health Health => health;
+
         protected void Start()
         {
+            // The health was never initialized: an AI saved with 0 health points could not die
+            health.Initialize();
             player = FindAnyObjectByType<Player>();
             agent = GetComponent<NavMeshAgent>();
         }
@@ -70,8 +74,18 @@ namespace Arena.AI
             }
         }
 
+        private bool _deathHandled;
+
         protected void OnDeath()
         {
+            // Several projectiles can hit in the same frame: die (and drop) only once
+            if (_deathHandled)
+                return;
+            _deathHandled = true;
+
+            if (TryGetComponent(out Arena.Interactions.AmmoDrop drop))
+                drop.Drop();
+
             Destroy(gameObject);
         }
     }
