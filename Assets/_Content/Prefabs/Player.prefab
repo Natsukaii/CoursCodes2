@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 1336261255310037562}
   - component: {fileID: 4700255994880078248}
   - component: {fileID: 7678313450534884141}
+  - component: {fileID: 8214457013337721001}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -163,6 +164,28 @@ MonoBehaviour:
   _health:
     Max: 100
     _current: 0
+--- !u!114 &8214457013337721001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701756709460610233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c50efccfba949efb0ea8bfb9c74eca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arena.UI.DamageVignette
+  _material: {fileID: 2100000, guid: c283f95fb901ffb4ebf65c96ca80abbc, type: 2}
+  _settings:
+    HitIntensity: 1.5
+    HitFadeDuration: 0.6
+    LowHealthThreshold: 0.4
+    LowHealthIntensity: 1.2
+    HeartbeatSpeed: 1.2
+    HeartbeatAmount: 0.15
+    DeathIntensity: 2.2
+    Smoothing: 0.05
 --- !u!1001 &4057595757166956945
 PrefabInstance:
   m_ObjectHideFlags: 0

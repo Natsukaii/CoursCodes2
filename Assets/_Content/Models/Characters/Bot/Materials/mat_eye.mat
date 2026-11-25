@@ -53,9 +53,9 @@ Material:
     - _EmissionOn: 1
     - _MetallicStrength: 0.0
     - _NormalStrength: 1.0
-    - _SmoothnessStrength: 0.0
+    - _SmoothnessStrength: 0.92
     m_Colors:
     - _BaseColor: {r: 0.6999, g: 0.8661, b: 0.9809, a: 1}
-    - _EmissionColor: {r: 0.3020, g: 3.0627, b: 4.9246, a: 1}
+    - _EmissionColor: {r: 0.3500, g: 3.0000, b: 4.5000, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
