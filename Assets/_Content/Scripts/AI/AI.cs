@@ -34,7 +34,20 @@ namespace Arena.AI
                 return false;
             }
 
-            if (Vector3.Distance(transform.position, player.transform.position) > RangeToStopFollow)
+            bool playerHit = false;
+            Vector3 origin = transform.position + Vector3.up * 0.9f;
+            Vector3 direction = transform.forward;
+
+            Debug.DrawRay(origin, direction * RangeToStopFollow, Color.red, 1f);
+
+            if (Physics.Raycast(origin, direction, out RaycastHit hit, RangeToStopFollow))
+            {
+                Debug.Log($"Touché : {hit.collider.name}");
+                playerHit = hit.collider.CompareTag("Player");
+                Debug.Log(playerHit);
+            }
+
+            if (Vector3.Distance(transform.position, player.transform.position) > RangeToStopFollow || !playerHit)
             {
                 agent.Resume();
                 agent.SetDestination(player.transform.position);

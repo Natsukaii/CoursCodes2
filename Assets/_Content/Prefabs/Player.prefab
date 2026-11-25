@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 7678313450534884141}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovero
   _settings:
     Speed: 10
+    RotationDamping: 0.08
     RunSpeed: 18
     DashDistance: 4
     DashDuration: 0.2
@@ -161,11 +162,6 @@ MonoBehaviour:
     IsStunned: 0
   _health:
     Max: 100
-    Armor: 0
-    Resistances:
-    - Type: 2
-      Multiplier: 0
-    Immunities: 00000000
     _current: 0
 --- !u!1001 &4057595757166956945
 PrefabInstance:
@@ -264,7 +260,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Arena.Combat.ProjectileLauncher
   _settings:
     Weapon: {fileID: 11400000, guid: c26b3ad646cf24c48904c1878f8d37e8, type: 2}
-    InfiniteAmmo: 1
   _references:
     Muzzle: {fileID: 635898796213162980}
   _state:
