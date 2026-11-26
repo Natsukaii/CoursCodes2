@@ -83,6 +83,17 @@ namespace Arena.Characters
         public Health Health => _health;
         public ProjectileLauncher Launcher => _references.Launcher;
 
+        /// <summary>
+        /// Multiplies the walk and run speeds (Haste bonus).
+        /// </summary>
+        public float SpeedMultiplier { get; set; } = 1f;
+
+        /// <summary>
+        /// Shield points, absorbed before the health. Given by the Shield bonus.
+        /// </summary>
+        public float Shield { get; set; }
+        public float MaxShield => 100f;
+
         private bool _isInteracting;
         private Vector2 _moveInput;
         private Camera _camera;
@@ -180,6 +191,17 @@ namespace Arena.Characters
 
         public void TakeDamage(DamageInfo damage)
         {
+            // The shield absorbs the damage first
+            if (Shield > 0f && damage.Amount > 0)
+            {
+                float absorbed = Mathf.Min(Shield, damage.Amount);
+                Shield -= absorbed;
+                int left = damage.Amount - Mathf.CeilToInt(absorbed);
+                if (left <= 0)
+                    return;
+                damage = new DamageInfo(left, damage.Type, damage.Source);
+            }
+
             _health.TakeDamage(damage);
         }
 
@@ -287,7 +309,7 @@ namespace Arena.Characters
             else
             {
                 float speed = _state.IsRunning ? _settings.RunSpeed : _settings.Speed;
-                velocity = _moveDirection * KMH_TO_MS * speed;
+                velocity = _moveDirection * KMH_TO_MS * speed * SpeedMultiplier;
             }
 
             _state.IsMoving = velocity.sqrMagnitude > .01f;

@@ -102,6 +102,31 @@ namespace Arena.FX
 
         #endregion
 
+        #region PUBLIC METHODS
+
+        /// <summary>
+        /// Changes the colour of the trail and of its light (used to tint the projectiles by ammo type).
+        /// </summary>
+        public void SetColor(Color hdr, Color light)
+        {
+            _settings.Color = hdr;
+            _settings.LightColor = light;
+
+            if (_particles)
+            {
+                ParticleSystemRenderer r = _particles.GetComponent<ParticleSystemRenderer>();
+                if (r.trailMaterial)
+                    r.trailMaterial.SetColor("_BaseColor", hdr);
+                if (r.sharedMaterial)
+                    r.sharedMaterial.SetColor("_BaseColor", hdr * 0.6f);
+            }
+
+            if (_light)
+                _light.color = light;
+        }
+
+        #endregion
+
         #region PRIVATE METHODS
 
         private void CreateParticles()

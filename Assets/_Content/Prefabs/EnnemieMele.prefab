@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 8051297605228046920}
   - component: {fileID: 3166397789599994651}
   - component: {fileID: 7737597517679339012}
+  - component: {fileID: 9100000000000000001}
+  - component: {fileID: 9100000000000000002}
   m_Layer: 0
   m_Name: EnnemieMele
   m_TagString: Untagged
@@ -79,14 +81,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Arena.AI.AI_Mele
   health:
-    Max: 100
-    _current: 0
+    Max: 70
+    _current: 70
   basicSetting:
-    Speed: 5
-    RangeToStopFollow: 1
+    Speed: 3.6
+    RangeToStopFollow: 1.6
   _meleSettingSetting:
-    Amount: 0
+    Amount: 15
     Type: 0
+    Reach: 2.1
+    Angle: 150
+    Windup: 0.4
+    SlashDuration: 0.16
+    Recover: 0.3
+    Cooldown: 0.9
+    BladeColor: {r: 1, g: 0.1, b: 0.25, a: 1}
+  _neonShader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
 --- !u!195 &3166397789599994651
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -340,3 +350,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6693096958089127888, guid: dce89e082ea7b9c48ab0fe0f0d38f147, type: 3}
   m_PrefabInstance: {fileID: 7591747785907896725}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9100000000000000001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851573511281411807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8908671cda4f48f8a825d53b59b3b009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arena.Interactions.AmmoDrop
+  _settings:
+    Chance: 0.85
+    Physical: 15
+    Energy: 30
+    Digital: 4
+    Weights: {x: 1, y: 1, z: 0.6}
+    HealthChance: 0.25
+    Health: 25
+  _references:
+    NeonShader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
+    RingTexture: {fileID: 2800000, guid: 1f3c0e12f44b4ca0a1d67ff2a15446e2, type: 3}
+--- !u!114 &9100000000000000002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851573511281411807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1c84e433ba472d8af06b97a99ccabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arena.FX.NeonRig
+  _settings:
+    Style: 1
+    Color: {r: 1, g: 0.08, b: 0.12, a: 1}
+    Intensity: 2.2
+    RingSize: 1.5
+  _references:
+    NeonShader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
+    RingTexture: {fileID: 2800000, guid: 1f3c0e12f44b4ca0a1d67ff2a15446e2, type: 3}

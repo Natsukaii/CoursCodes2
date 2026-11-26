@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7420100393197611561}
   - component: {fileID: 218020317205271950}
   - component: {fileID: 7344552849797349265}
+  - component: {fileID: 9100000000000000011}
+  - component: {fileID: 9100000000000000012}
   m_Layer: 0
   m_Name: EnnemieRange
   m_TagString: Untagged
@@ -48,10 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Arena.AI.AI_Range
   health:
-    Max: 50
-    _current: 50
+    Max: 45
+    _current: 45
   basicSetting:
-    Speed: 5
+    Speed: 2.6
     RangeToStopFollow: 10
   launcher: {fileID: 1090898565777343270}
 --- !u!195 &218020317205271950
@@ -338,3 +340,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6fff3f1a06c6aab4fb5e1055f1d22848, type: 3}
   m_PrefabInstance: {fileID: 3268068911430188675}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9100000000000000011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3422268011358649629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8908671cda4f48f8a825d53b59b3b009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arena.Interactions.AmmoDrop
+  _settings:
+    Chance: 0.85
+    Physical: 15
+    Energy: 30
+    Digital: 4
+    Weights: {x: 1, y: 1, z: 0.6}
+    HealthChance: 0.25
+    Health: 25
+  _references:
+    NeonShader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
+    RingTexture: {fileID: 2800000, guid: 1f3c0e12f44b4ca0a1d67ff2a15446e2, type: 3}
+--- !u!114 &9100000000000000012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3422268011358649629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1c84e433ba472d8af06b97a99ccabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arena.FX.NeonRig
+  _settings:
+    Style: 1
+    Color: {r: 1, g: 0.08, b: 0.12, a: 1}
+    Intensity: 2.2
+    RingSize: 1.5
+  _references:
+    NeonShader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
+    RingTexture: {fileID: 2800000, guid: 1f3c0e12f44b4ca0a1d67ff2a15446e2, type: 3}

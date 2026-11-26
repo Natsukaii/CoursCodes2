@@ -76,6 +76,10 @@ GameObject:
   - component: {fileID: 8214457013337721001}
   - component: {fileID: 8214457013337721002}
   - component: {fileID: 8214457013337721003}
+  - component: {fileID: 8214457013337721004}
+  - component: {fileID: 8214457013337721005}
+  - component: {fileID: 8214457013337721006}
+  - component: {fileID: 8214457013337721007}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -202,10 +206,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Arena.FX.NeonTrail
   _settings:
     Color: {r: 0, g: 2.2, b: 2.8, a: 1}
-    Width: 0.4
-    Lifetime: 0.7
-    ParticlesPerMeter: 8
-    Offset: {x: 0, y: 0.15, z: 0}
+    Width: 0.18
+    Lifetime: 0.35
+    ParticlesPerMeter: 10
+    Offset: {x: 0, y: 0.05, z: 0}
     Sparks: 1
     AddLight: 1
     LightColor: {r: 0.2, g: 0.85, b: 1, a: 1}
@@ -235,6 +239,80 @@ MonoBehaviour:
     LowHealth: 0.4
     Objective: Atteindre le coeur du reacteur
     ScanlinesOpacity: 0.08
+--- !u!114 &8214457013337721004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701756709460610233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ef861a47194b55970448a8af49d893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arena.Characters.WeaponSwitcher
+  _wheelCooldown: 0.12
+--- !u!114 &8214457013337721005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701756709460610233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1c84e433ba472d8af06b97a99ccabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arena.FX.NeonRig
+  _settings:
+    Style: 0
+    Color: {r: 0, g: 0.85, b: 1, a: 1}
+    Intensity: 2.5
+    RingSize: 1.8
+  _references:
+    NeonShader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
+    RingTexture: {fileID: 2800000, guid: 1f3c0e12f44b4ca0a1d67ff2a15446e2, type: 3}
+--- !u!114 &8214457013337721006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701756709460610233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d073f8061ca541dfac111fde41964870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arena.FX.TronLightWall
+  _settings:
+    Color: {r: 0, g: 1.6, b: 2.2, a: 1}
+    Height: 1.1
+    Lifetime: 1.4
+    Resolution: 0.15
+    BaseHeight: 0.03
+  _references:
+    NeonShader: {fileID: 4800000, guid: 0406db5a14f94604a8c57ccfbc9f3b46, type: 3}
+--- !u!114 &8214457013337721007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701756709460610233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0295071c07c4840be8e88ef76886104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Arena.Characters.PlayerBuffs
+  _settings:
+    Heal: 35
+    ShieldGain: 60
+    OverdriveDuration: 10
+    OverdriveDamage: 2
+    HasteDuration: 8
+    HasteSpeed: 1.4
+    RapidFireDuration: 10
+    RapidFireRate: 1.8
 --- !u!1001 &4057595757166956945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -332,6 +410,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Arena.Combat.ProjectileLauncher
   _settings:
     Weapon: {fileID: 11400000, guid: c26b3ad646cf24c48904c1878f8d37e8, type: 2}
+    Arsenal:
+    - {fileID: 11400000, guid: c26b3ad646cf24c48904c1878f8d37e8, type: 2}
+    - {fileID: 11400000, guid: 186d26ab81c0459796043149ceb7f448, type: 2}
+    - {fileID: 11400000, guid: 9a9c25ecfa0d4eb3bf7793071011cb50, type: 2}
   _references:
     Muzzle: {fileID: 635898796213162980}
   _state:
